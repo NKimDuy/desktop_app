@@ -1,0 +1,73 @@
+.left-side {
+    border-right: 1px solid black;
+}
+
+#btnPdf {
+    display: none;
+}
+
+#hienThiHinhAnh li {
+    float:left;
+    list-style-type: none;
+    border: 1px solid black;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+#hienThanhQuaTrinh {
+    display: none;
+}
+
+
+.disable-element {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+body {
+    overflow-y: hidden;
+}
+
+
+.left-side {
+    height: 1000px;
+    overflow-y: scroll;
+}
+
+.right-side {
+    height: 1000px;
+    overflow-y: scroll;
+}
+
+.khung-tim-kiem {
+    overflow: hidden;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    width: 39%;
+}
+
+.vung-chua-hinh {
+    padding: 16px;
+    margin-top: 140px;
+}
+
+.to-do-hinh-duoc-chon {
+    outline: 3px solid green;
+}
+
+#thongBao {
+    color:red;
+}
+
+.rotate-left {
+    transform: rotate(-90deg);
+}
+
+.rotate-right {
+    transform: rotate(90deg);
+}
+
+.rotate-bottom {
+    transform: rotate(180deg);
+}
