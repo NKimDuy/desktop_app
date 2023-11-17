@@ -167,45 +167,56 @@ window.onload = function() {
         hinhDuocXoay.removeAttribute("class")
     })
 
-    // btnIn.addEventListener('click', (e) => {
+    btnIn.addEventListener('click', (e) => {
+        let anhduocIn = [] // ảnh sẽ xuất ra file pdf
+        let anhDuocChon = [] // ảnh được người dùng chọn
+        luuHinhTimDuoc = []
+        var tatCaHinh = document.querySelectorAll('input[type="checkbox"]') // chọn tất cả các checkbox đang được chọn
+        var chonHinh = document.querySelectorAll('input:checked')
+        var vungIn = document.getElementById('vungIn')
 
-    //     let anhduocIn = [] // ảnh sẽ xuất ra file pdf
-    //     let anhDuocChon = [] // ảnh được người dùng chọn
-    //     var inputs = document.querySelectorAll('input:checked') // chọn tất cả các checkbox đang được chọn
-    //     var vungIn = document.getElementById('vungIn')
-    //     for (var i = 0; i < inputs.length; i++) {   
-    //         if(inputs[i].checked == true)
-    //         anhDuocChon.push(inputs[i].value)
-    //     }   
-    //     if(anhDuocChon.length != 0)
-    //         anhduocIn = anhDuocChon
-    //     else
-    //         anhduocIn = luuHinhTimDuoc
+        for (var i = 0; i < tatCaHinh.length; i++) {   
+            luuHinhTimDuoc.push(tatCaHinh[i].value)
+        }   
 
-        
-    //     //var inAnh = window.open("", "", "height=0, width=0")
-    //    // inAnh.document.write("<html>")
-    //     //inAnh.document.write("<body>")
-    //     let img = ''
-    //     for (var i = 0; i < anhduocIn.length; i++) {
-    //         img += "<img class='img-fluid' src ='" + anhduocIn[i] + "'/>"
-    //         //inAnh.document.write(img)
+        for (var i = 0; i < chonHinh.length; i++) {   
+            if(chonHinh[i].checked == true)
+            anhDuocChon.push(chonHinh[i].value)
+        }   
+
+        if(anhDuocChon.length != 0)
             
-    //     }
-    //     console.log(img)
-    //     vungIn.innerHTML = img
-    //     //inAnh.document.write('</body></html>')
-    //     //inAnh.document.close()
-    //     //inAnh.print() 
-    //     //inAnh.close()
-        
-    //     document.body.innerHTML = vungIn.innerHTML
+            anhduocIn = anhDuocChon
+        else
+            anhduocIn = luuHinhTimDuoc
 
-    //     window.print()
-        
-    //     vungIn.innerHTML = ''
+        let img = ''
+        for (var i = 0; i < anhduocIn.length; i++) {
+            //img += "<img class='img-fluid' src ='" + anhduocIn[i] + "'/>"
+            //img += anhduocIn[i]
+            img += "<div>duy</div>"
+            console.log(anhduocIn[i])
+        }
 
-    // })
+        var inAnh = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0')
+        inAnh.document.write(img)
+        inAnh.document.close()
+        inAnh.focus()
+        inAnh.print()
+        inAnh.close()
+
+
+        // let img = ''
+        // for (var i = 0; i < anhduocIn.length; i++) {
+        //     img += "<img class='img-fluid' src ='" + anhduocIn[i] + "'/>"
+        // }
+        // vungIn.innerHTML = img
+        //  let giaoDienBanDau = document.body.innerHTML
+        //  document.body.innerHTML = vungIn.innerHTML
+        //  window.print()
+        //  document.body.innerHTML = giaoDienBanDau
+        //  vungIn.innerHTML = ""
+    })
 
 //})
 };
